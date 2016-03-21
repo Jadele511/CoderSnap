@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :messages
   get 'sent_messages' => 'messages#sent_messages'
 
-  resources :friendship
+  resources :friendships
   resources :sessions, only: [:new, :create]
 
   get 'new_friend' => 'friendships#new_friend'

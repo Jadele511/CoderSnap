@@ -26,6 +26,10 @@ class MessagesController < ApplicationController
     	end
 	end
 
+	def show
+    	@message = Message.find(params[:id])
+    end
+
 	def received_messages
     	Message.where(recipient_id: current_user.id).order('created_at DESC')
   	end
@@ -35,6 +39,6 @@ class MessagesController < ApplicationController
 	end
 	
 	def message_params
-      params.require(:message).permit(:title, :body, :recipient_id)
+      params.require(:message).permit(:body, :sender_id, :recipient_id, :user_id)
     end
 end
