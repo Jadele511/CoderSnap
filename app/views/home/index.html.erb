@@ -1,20 +1,6 @@
-<h1>Home#index</h1>
 
-<h2> Users</h2>
-	<table class="table">
-		<thead class="thead thead-default">
-			<tr>
-				<th> Name</th>
-				<th> Email </th>
-			</tr>
-		</thead>
 
-		<tbody>
-			<% User.all.each do |user| %>
-			<tr>
-				<td> <%= user.name %> </td>
-				<td> <%= user.email %> </td>
-			</tr>
-			<% end %>	
-		</tbody>
-<%= link_to "Sign Up", new_user_path %>
+<div class="jumbotron">
+  <h1 class="display-3">Welcome to app chat of the nerds</h1>
+  <p class="lead">Discover the Undiscovered!</p>
+</div>

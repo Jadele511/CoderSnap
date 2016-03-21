@@ -1,0 +1,31 @@
+<h1>All Messages</h1>
+
+<table class="table">
+        <thead class="thead thead-default">
+            <tr>
+                <th> Title</th>
+                <th> Body </th>
+                <th> Created At </th>
+            </tr>
+        </thead>
+        <tbody>
+    			<% @received_messages.each do |mess| %>
+            <% if mess.read? %>
+                <p> Status: Read </p>
+              <% else %>  
+                <tr>
+                  <strong>
+                    <td class="float-left"> <%= mess.title %></td>
+                    <td class="clear"><%= mess.body %></td>
+                    <td class="clear"><%= mess.created_at %></td>
+                  </strong>
+                 </tr>      
+              <% end %>
+    			 <% end %>
+		</tbody>
+
+  <%= link_to "Create a message", new_message_path %>
+
+  <%= link_to "Add friends", friendship_index_path %>
+
+  <%= link_to "Sent messages", sent_messages_path %>

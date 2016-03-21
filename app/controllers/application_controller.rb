@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
   def to_s
   	name
   end
-  
+
   def current_user
   	if session[:user_id]
-  		User.find session[:user_id]
+  		@currnet_user ||= User.find_by_id session[:user_id]
   	end
   end
 end
